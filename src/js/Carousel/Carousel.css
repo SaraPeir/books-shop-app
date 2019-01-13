@@ -9,14 +9,17 @@
 
 .margin-left0 {
     margin-left: 0;
+    transition: margin-left 0.5s;
 }
 
 .margin-left-less50 {
     margin-left: -50%;
+    transition: margin-left 0.5s;
 }
 
 .margin-left-less100 {
     margin-left: -100%;
+    transition: margin-left 0.5s;
 }
 
 .carousel-wrapper {
