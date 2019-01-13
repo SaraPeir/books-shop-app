@@ -1,0 +1,29 @@
+.carousel {
+    width: 200%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: blue;  
+}
+
+.margin-left0 {
+    margin-left: 0;
+}
+
+.margin-left-less50 {
+    margin-left: -50%;
+}
+
+.margin-left-less100 {
+    margin-left: -100%;
+}
+
+.carousel-wrapper {
+    width: 100%;
+    position: relative;
+    height: 500px;
+    border: 1px solid red;
+    overflow: hidden;
+}
+
