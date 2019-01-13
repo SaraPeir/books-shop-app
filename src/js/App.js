@@ -8,17 +8,29 @@ class App extends Component {
         this.props.requestInfo();
     }
 
-    render(){
+    render(){       
+        
         return(
-            <h1>Hola!</h1>
+            <div>
+            <h1>{this.props.bookName}</h1>
+            </div>
         )
     }
 }
 
-export default connect(null, {requestInfo})(App);
+function mapStateToProps(state){
+    return {
+        bookName: state.requestedInfo.firstNameBook
+    }
+}
+
+export default connect(mapStateToProps, {requestInfo})(App);
 
 
 
 // export default App;
+
+/* const bookName = this.props;
+        const {array} = this.state; */
 
 // ideale: quando avremo un servizio, si potrá trasformare l'output di quest'ultimo in un  json, metterlo in un file ed attuare come sopra.

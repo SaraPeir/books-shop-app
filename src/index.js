@@ -16,6 +16,7 @@ ReactDOM.render(
         </Provider>
     , document.getElementById('root'));
 
+    export default store;
 //import { BrowserRouter, HashRouter } from 'react-router-dom';
 
 /* ReactDOM.render(

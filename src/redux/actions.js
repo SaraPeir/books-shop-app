@@ -7,6 +7,7 @@ export function requestInfo() {
         const array = []
         array.push(booksObject);
         console.log(array);
+        console.log(array[0].ficcion[0].title);
         dispatch({
             type: REQUEST_INFO,
             arrayInfo: array
