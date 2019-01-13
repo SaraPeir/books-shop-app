@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    background-color: blue;  
 }
 
 .margin-left0 {
@@ -25,8 +24,36 @@
 .carousel-wrapper {
     width: 100%;
     position: relative;
-    height: 500px;
     border: 1px solid red;
     overflow: hidden;
+    margin: 0 auto;
+    height: 500px;
 }
 
+.carousel-container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 0 auto;
+    height: 500px;
+
+}
+
+.button-style {
+  border: none;
+  background-color: dodgerblue;
+  color: white;
+  cursor: pointer;
+}
+
+.disabled-left {
+    background-color: lightgrey;
+    border: lightgrey;
+    cursor: not-allowed;
+}
+
+.disabled-right {
+    background-color: lightgrey;
+    border: lightgrey;
+    cursor: not-allowed;
+}

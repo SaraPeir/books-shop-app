@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Card from '../Card/Card';
 import './Carousel.css';
 
 class Carousel extends Component {
@@ -7,7 +6,9 @@ class Carousel extends Component {
         super();
         this.state = {
             marginLeft: 0,
-            marginLeftClass: 'margin-left0'
+            marginLeftClass: 'margin-left0',
+            disabledLeft: 'disabled-left',
+            disabledRight: ''
         }
         this.toRight = this.toRight.bind(this);
         this.toLeft = this.toLeft.bind(this);
@@ -18,12 +19,16 @@ class Carousel extends Component {
         if(marginLeft === 0){
             this.setState({
                 marginLeft: 50,
-                marginLeftClass: 'margin-left-less50'
+                marginLeftClass: 'margin-left-less50',
+                disabledRight: '',
+                disabledLeft: ''
             }) 
         } else if(marginLeft === 50){
             this.setState({
                 marginLeft: 100,
-                marginLeftClass: 'margin-left-less100'
+                marginLeftClass: 'margin-left-less100',
+                disabledRight: 'disabled-right',
+                disabledLeft: ''
             }) 
         }
     }
@@ -33,33 +38,30 @@ class Carousel extends Component {
         if(marginLeft === 100){
             this.setState({
                 marginLeft: 50,
-                marginLeftClass: 'margin-left-less50'
+                marginLeftClass: 'margin-left-less50',
+                disabledLeft: '',
+                disabledRight: ''
             }) 
         } else if(marginLeft === 50){
             this.setState({
                 marginLeft: 0,
-                marginLeftClass: 'margin-left0'
+                marginLeftClass: 'margin-left0',
+                disabledLeft: 'disabled-left',
+                disabledRight: ''
             }) 
         }
     }
 
     render(){
         return(
-            <div className="carousel-wrapper">
-            <button onClick={this.toLeft}>&lt;&lt;</button>
-            <button onClick={this.toRight}>&gt;&gt;</button>
-                <div className={`carousel ${this.state.marginLeftClass}`}>
-                    <Card word={'A'} />
-                    <Card word={'B'} />
-                    <Card word={'C'} />
-                    <Card word={'D'} />
-                    <Card word={'E'} />
-                    <Card word={'F'} />
-                    <Card word={'G'} />
-                    <Card word={'H'} />
-                    <Card word={'I'} />
-                    <Card word={'J'} />
-                </div>
+            <div className="carousel-container">
+                <button className={`button-style ${this.state.disabledLeft}`} onClick={this.toLeft}>&lt;&lt;</button>
+                    <div className="carousel-wrapper">
+                        <div className={`carousel ${this.state.marginLeftClass}`}>
+                            {this.props.children}
+                        </div>
+                    </div>
+                <button className={`button-style ${this.state.disabledRight}`} onClick={this.toRight}>&gt;&gt;</button>
             </div>
         )
     }

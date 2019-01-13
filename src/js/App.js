@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {requestInfo} from '../redux/actions.js';
 import Carousel from './Carousel/Carousel';
+import Card from './Card/Card';
 
 class App extends Component {
     componentDidMount() {
@@ -13,7 +14,18 @@ class App extends Component {
         return(
             <div>
                 <h1>{this.props.bookName}</h1>
-                <Carousel />
+                <Carousel>
+                    <Card word={'A'} />
+                    <Card word={'B'} />
+                    <Card word={'C'} />
+                    <Card word={'D'} />
+                    <Card word={'E'} />
+                    <Card word={'F'} />
+                    <Card word={'G'} />
+                    <Card word={'H'} />
+                    <Card word={'I'} />
+                    <Card word={'J'} />
+                </Carousel>
             </div>
         )
     }
