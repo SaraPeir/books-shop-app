@@ -37,7 +37,17 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {requestInfo})(App);
+function mapDispatchToProps(dispatch) {
+   return {
+       requestInfo: () => dispatch(requestInfo)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+
+// en caso se quiera aprovechar del uso del thunk:
+// export default connect(mapStateToProps, {requestInfo})(App);
 
 
 // ideale: quando avremo un servizio, si potrá trasformare l'output di quest'ultimo in un  json, metterlo in un file ed attuare come sopra.
