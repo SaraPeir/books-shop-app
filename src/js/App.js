@@ -1,53 +1,39 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {requestInfo} from '../redux/actions.js';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { requestInfo } from '../redux/actions.js';
+import { mapInfo } from '../redux/actions.js';
 import Carousel from './Carousel/Carousel';
 import Card from './Card/Card';
+import Loader from 'react-loader-spinner'
 
 class App extends Component {
     componentDidMount() {
         this.props.requestInfo();
     }
 
-    render(){       
-        
-        return(
+    componentWillReceiveProps(nextProps){
+        if(this.props.infoBooks !== nextProps.infoBooks){
+            this.props.mapInfo(nextProps.infoBooks);
+        }
+    }
+
+    render() {
+        return (
             <div>
-                <h1>{this.props.bookName}</h1>
                 <Carousel>
-                    <Card word={'A'} />
-                    <Card word={'B'} />
-                    <Card word={'C'} />
-                    <Card word={'D'} />
-                    <Card word={'E'} />
-                    <Card word={'F'} />
-                    <Card word={'G'} />
-                    <Card word={'H'} />
-                    <Card word={'I'} />
-                    <Card word={'J'} />
+                    {this.props.mapped}
                 </Carousel>
             </div>
         )
     }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
     return {
-        bookName: state.requestedInfo.firstNameBook
+        infoBooks: state.requestedInfo.infoBooks,
+        mapped: state.mapInfo.mapped
     }
 }
 
-function mapDispatchToProps(dispatch) {
-   return {
-       requestInfo: () => dispatch(requestInfo)
-    }
-}
+export default connect(mapStateToProps, { requestInfo, mapInfo })(App);
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-
-// en caso se quiera aprovechar del uso del thunk:
-// export default connect(mapStateToProps, {requestInfo})(App);
-
-
-// ideale: quando avremo un servizio, si potrá trasformare l'output di quest'ultimo in un  json, metterlo in un file ed attuare come sopra.

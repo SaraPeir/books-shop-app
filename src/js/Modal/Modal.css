@@ -1,0 +1,17 @@
+img {
+    width: 70%;
+   box-shadow: 10px 10px 10px lightgrey;
+}
+
+.centering {
+    text-align: center;
+}
+
+.special-typo {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.special-typo2 {
+    font-weight: 100;
+}

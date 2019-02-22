@@ -1,5 +1,5 @@
 .carousel {
-    width: 200%;
+    width: 300%;
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -12,17 +12,27 @@
 }
 
 .margin-left-less50 {
-    margin-left: -50%;
-    transition: margin-left 0.5s;
-}
-
-.margin-left-less100 {
     margin-left: -100%;
     transition: margin-left 0.5s;
 }
 
+.margin-left-less100 {
+    margin-left: -200%;
+    transition: margin-left 0.5s;
+}
+
+/* .margin-left-less150 {
+    margin-left: -150%;
+    transition: margin-left 0.5s;
+}
+
+.margin-left-less200 {
+    margin-left: -200%;
+    transition: margin-left 0.5s;
+} */
+
 .carousel-wrapper {
-    width: 100%;
+    width: 150%;
     position: relative;
     border: 1px solid red;
     overflow: hidden;

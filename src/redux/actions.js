@@ -1,6 +1,10 @@
 import booksObject from '../books.json';
+import React from 'react';
+import Card from '../js/Card/Card.js';
+
 
 export const REQUEST_INFO = 'REQUEST_INFO';
+export const MAP_INFO = 'MAP_INFO';
 
 export function requestInfo() {
     const array = []
@@ -10,6 +14,18 @@ export function requestInfo() {
             arrayInfo: array
         }
 }
+
+export function mapInfo(arrayProp) {
+    const mapp =  arrayProp.length > 0 && arrayProp[0].ficcion && arrayProp[0].noFiccion ? 
+    arrayProp[0].ficcion.map((book, index) => <Card key={index} title={book.title} author={book.author} type={book.type} url={book.urlImg} openModal={this.openModal} introductionText={book.introductionText} content={book.content} pageNumber={book.pageNumber} tag={book.tag} type2={book.type2}  /> ) : 'ERROR TO LOAD';
+ 
+    return {
+            type: MAP_INFO,
+            payload: mapp
+        }
+}
+
+// openModal={this.openModal} introductionText={book.introductionText} content={book.content} pageNumber={book.pageNumber} tag={book.tag} type2={book.type2}
 
 // en caso se quiere aprovechar del uso del thunk
 /* export function requestInfo() {
