@@ -21,7 +21,11 @@ class App extends Component {
         return (
             <div>
                 <Carousel>
-                    {this.props.mapped}
+                    {this.props.ficcion}
+                </Carousel>
+
+                <Carousel>
+                    {this.props.noFiccion}
                 </Carousel>
             </div>
         )
@@ -31,7 +35,9 @@ class App extends Component {
 function mapStateToProps(state) {
     return {
         infoBooks: state.requestedInfo.infoBooks,
-        mapped: state.mapInfo.mapped
+        ficcion: state.mapInfo.ficcion,
+        noFiccion: state.mapInfo.noFiccion
+
     }
 }
 

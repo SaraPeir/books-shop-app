@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import App from "./js/App";
 import rootReducer from './redux/reducers/index.js';
@@ -13,13 +13,8 @@ const store = createStoreWithMiddleware(rootReducer);
 ReactDOM.render(
     <Provider store={store}>
         <App />
-        </Provider>
-    , document.getElementById('root'));
+    </Provider>, 
+    document.getElementById('root')
+);
 
     export default store;
-//import { BrowserRouter, HashRouter } from 'react-router-dom';
-
-/* ReactDOM.render(
-    <HashRouter>
-        <App />
-    </HashRouter>, document.getElementById('root')); */

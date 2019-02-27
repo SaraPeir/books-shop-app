@@ -46,26 +46,29 @@ class Carousel extends Component {
 
     toLeft(){
         const {marginLeft, marginLeftClass} = this.state;
-        if(marginLeftClass === 'margin-left-less200'){
+        if(marginLeft === 200){
             this.setState({
                 marginLeft: 100,
                 marginLeftClass: 'margin-left-less100',
                 disabledRight: ''
             }) 
+            console.log(marginLeft);
         } else if(marginLeft === 100){
             this.setState({
                 marginLeft: 0,
                 marginLeftClass: 'margin-left0',
                 disabledLeft: 'disabled-left',
                 disabledRight: ''
-            }) 
-        } else if(marginLeft === 100){
+            })
+            console.log(marginLeft); 
+        } else if(marginLeft === 50){
             this.setState({
-                marginLeft: 50,
-                marginLeftClass: 'margin-left50',
-                disabledLeft: '',
+                marginLeft: 0,
+                marginLeftClass: 'margin-left0',
+                disabledLeft: 'disabled-left',
                 disabledRight: ''
             }) 
+            console.log(marginLeft);
         }
     }
 
