@@ -23,30 +23,47 @@ class Carousel extends Component {
                 disabledRight: '',
                 disabledLeft: ''
             }) 
-        } else if(marginLeft === 50){
+        } else if(marginLeft === 50) {
             this.setState({
                 marginLeft: 100,
-                marginLeftClass: 'margin-left-less100',
+                marginLeftClass: 'margin-left-less100'
+            })
+        } else if(marginLeft === 100) {
+            this.setState({
+                marginLeft: 150,
+                marginLeftClass: 'margin-left-less150'
+            })
+        }
+         else if(marginLeft === 150){
+            this.setState({
+                marginLeft: 200,
+                marginLeftClass: 'margin-left-less200',
                 disabledRight: 'disabled-right',
                 disabledLeft: ''
             }) 
-        }
+        } 
     }
 
     toLeft(){
-        const {marginLeft} = this.state;
-        if(marginLeft === 100){
+        const {marginLeft, marginLeftClass} = this.state;
+        if(marginLeftClass === 'margin-left-less200'){
             this.setState({
-                marginLeft: 50,
-                marginLeftClass: 'margin-left-less50',
-                disabledLeft: '',
+                marginLeft: 100,
+                marginLeftClass: 'margin-left-less100',
                 disabledRight: ''
             }) 
-        } else if(marginLeft === 50){
+        } else if(marginLeft === 100){
             this.setState({
                 marginLeft: 0,
                 marginLeftClass: 'margin-left0',
                 disabledLeft: 'disabled-left',
+                disabledRight: ''
+            }) 
+        } else if(marginLeft === 100){
+            this.setState({
+                marginLeft: 50,
+                marginLeftClass: 'margin-left50',
+                disabledLeft: '',
                 disabledRight: ''
             }) 
         }

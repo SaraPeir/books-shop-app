@@ -12,16 +12,16 @@
 }
 
 .margin-left-less50 {
-    margin-left: -100%;
+    margin-left: -50%;
     transition: margin-left 0.5s;
 }
 
 .margin-left-less100 {
-    margin-left: -200%;
+    margin-left: -100%;
     transition: margin-left 0.5s;
 }
 
-/* .margin-left-less150 {
+.margin-left-less150 {
     margin-left: -150%;
     transition: margin-left 0.5s;
 }
@@ -29,7 +29,7 @@
 .margin-left-less200 {
     margin-left: -200%;
     transition: margin-left 0.5s;
-} */
+}
 
 .carousel-wrapper {
     width: 150%;
@@ -67,3 +67,4 @@
     border: lightgrey;
     cursor: not-allowed;
 }
+
