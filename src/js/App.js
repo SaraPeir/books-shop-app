@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { requestInfo } from '../redux/actions.js';
-import { mapInfo } from '../redux/actions.js';
+import { mapInfo, buildPurchaseArray } from '../redux/actions.js';
 import Carousel from './Carousel/Carousel';
 import Card from './Card/Card';
 import Loader from 'react-loader-spinner'
@@ -27,6 +27,7 @@ class App extends Component {
                 <Carousel>
                     {this.props.noFiccion}
                 </Carousel>
+                <button onClick={this.props.buildPurchaseArray}>Launch event</button>
             </div>
         )
     }
@@ -41,5 +42,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { requestInfo, mapInfo })(App);
+export default connect(mapStateToProps, { requestInfo, mapInfo, buildPurchaseArray })(App);
 

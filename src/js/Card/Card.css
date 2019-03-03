@@ -1,13 +1,7 @@
 .card {
     width: 100%;
-    /* background-color: chocolate;
-    color: white; */
     height: 500px;
 }
-
-/* img{
-    width: 30%;
-} */
 
 .card-box {
     min-height: 500px;
@@ -18,9 +12,9 @@
 }
 
 .card-box-img {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+   /*  height: 250px; */
+    width: 50%;
+    margin: 10px auto;
     box-shadow: 10px 10px 10px lightgrey;
 }
 
@@ -29,12 +23,29 @@
     font-weight: bold;
 }
 
+.hidden {
+    display: none;
+}
+
+.margin-auto {
+    margin: 10px auto;
+}
+
 #tag {
     text-transform: uppercase;
     color: white;
     background: pink;
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
     font-weight: bold;
+}
+
+.icon-style {
+    stroke:lightgrey;
+    cursor: pointer;
+    }
+    
+.selected-icon-style {
+    stroke:red; 
+    cursor: pointer;
 }

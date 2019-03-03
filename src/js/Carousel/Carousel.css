@@ -34,7 +34,6 @@
 .carousel-wrapper {
     width: 150%;
     position: relative;
-    border: 1px solid red;
     overflow: hidden;
     margin: 0 auto;
     height: 500px;
@@ -59,12 +58,12 @@
 .disabled-left {
     background-color: lightgrey;
     border: lightgrey;
-    cursor: not-allowed;
+    cursor: auto;
 }
 
 .disabled-right {
     background-color: lightgrey;
     border: lightgrey;
-    cursor: not-allowed;
+    cursor: auto;
 }
 

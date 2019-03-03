@@ -70,6 +70,15 @@ class Carousel extends Component {
             }) 
             console.log(marginLeft);
         }
+        else if(marginLeft === 150){
+            this.setState({
+                marginLeft: 0,
+                marginLeftClass: 'margin-left0',
+                disabledLeft: 'disabled-left',
+                disabledRight: ''
+            }) 
+            console.log(marginLeft);
+        }
     }
 
     render(){
