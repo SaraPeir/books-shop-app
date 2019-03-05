@@ -3,7 +3,6 @@ import React from 'react';
 import Card from '../js/Card/Card.js';
 import store from '../index.js';
 
-
 export const REQUEST_INFO = 'REQUEST_INFO';
 export const MAP_INFO = 'MAP_INFO';
 export const BUILD_PURCHASE_ARRAY = 'BUILD_PURCHASE_ARRAY';
@@ -32,32 +31,32 @@ export function mapInfo(arrayProp) {
         }
 }
 
-export function buildPurchaseArray(index){
-    function getBooksArray(){
-        return store.getState().requestedInfo.infoBooks;
-    }
-    store.subscribe(getBooksArray);
-    const booksArray = getBooksArray();
+export function buildPurchaseArray(index, toggle){
+    return dispatch => {
+        function getBooksArray(){
+            return store.getState().requestedInfo.infoBooks;
+        }
+        store.subscribe(getBooksArray);
+        const booksArray = getBooksArray();
+    
+        function getPurchaseArray(){
+            return store.getState().buildPurchaseArray.arrayBooks;
+        }
+        store.subscribe(getPurchaseArray);
+        const purchaseArray = getPurchaseArray();
+    
+        const booksArray2 = booksArray[0].ficcion;
+        const getSingleBook = booksArray2[index];
+    
+        purchaseArray.push(getSingleBook)
+        const filtered = purchaseArray.filter(book => book.title !== getSingleBook.title);
 
-    function getPurchaseArray(){
-        return store.getState().buildPurchaseArray.arrayBooks;
-    }
-    store.subscribe(getPurchaseArray);
-    const purchaseArray = getPurchaseArray();
-
-
-    const booksArray2 = booksArray[0].ficcion;
-    const getSingleBook = booksArray2[index];
-
-    // const array = [];
-    purchaseArray.push(getSingleBook);
-
-    // console.log('booksArray', booksArray);
-    // console.log('booksArray2', booksArray2);
-    console.log('getSingleBook', purchaseArray);
-
-    return {
-        type: BUILD_PURCHASE_ARRAY,
-        payload: purchaseArray
+        const array = toggle ? purchaseArray : filtered;
+        console.log('array', array);
+    
+        dispatch({
+            type: BUILD_PURCHASE_ARRAY,
+            payload: array
+        }) 
     }
 }

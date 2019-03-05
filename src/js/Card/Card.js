@@ -9,7 +9,7 @@ class Card extends Component {
   constructor(){
     super();
     this.state = {
-      toggle:  false,
+      toggle:  true,
       iconClass: 'icon-style' 
     }
     this.togglePreference = this.togglePreference.bind(this);
@@ -19,11 +19,11 @@ class Card extends Component {
     const {toggle} = this.state;
     const changedIconClass = toggle ? 'selected-icon-style' : 'icon-style';
     toggle && console.log(this.props.index);
-    toggle && buildPurchaseArray(this.props.index);
     this.setState({
       toggle: !toggle,
       iconClass: changedIconClass
     })
+    this.props.buildPurchaseArray(this.props.index, toggle);
   }
 
   render() {
@@ -50,5 +50,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, { buildPurchaseArray })(Card);
-
-//  <ModalBS title={this.props.title} url={this.props.url} author={this.props.author} introductionText={this.props.introductionText} content={this.props.content} pageNumber={this.props.pageNumber} tag={this.props.tag} type2={this.props.type2} />
