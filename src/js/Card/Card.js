@@ -23,7 +23,7 @@ class Card extends Component {
       toggle: !toggle,
       iconClass: changedIconClass
     })
-    this.props.buildPurchaseArray(this.props.index, toggle);
+    this.props.buildPurchaseArray(this.props.index, toggle, this.props.kind);
   }
 
   render() {
@@ -33,6 +33,7 @@ class Card extends Component {
         <div className={this.state.iconClass} onClick={this.togglePreference} >{Heart}</div>
           <img className="card-box-img" src={this.props.url} alt={`${this.props.title} image`} />
           <p className="hidden">{this.props.index}</p>
+          <p className="hidden">{this.props.kind}</p>
           <p id="strong" className="margin-auto">{this.props.title}</p>
           <p className="margin-auto">{this.props.author}</p>
           <p id="tag" className="margin-auto">{this.props.type}</p>

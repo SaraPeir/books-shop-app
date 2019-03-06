@@ -18,12 +18,13 @@ export function requestInfo() {
 
 export function mapInfo(arrayProp) {
     const ficcionArray =  arrayProp.length > 0 && arrayProp[0].ficcion ? 
-    arrayProp[0].ficcion.map((book, index) => <Card key={index} index={index} title={book.title} author={book.author} type={book.type} url={book.urlImg} openModal={this.openModal} introductionText={book.introductionText} content={book.content} pageNumber={book.pageNumber} tag={book.tag} type2={book.type2}  /> ) : 'ERROR TO LOAD';
+    arrayProp[0].ficcion.map((book, index) => <Card key={index} index={index} kind="ficcion" title={book.title} author={book.author} type={book.type} url={book.urlImg} openModal={this.openModal} introductionText={book.introductionText} content={book.content} pageNumber={book.pageNumber} tag={book.tag} type2={book.type2}  /> ) : 'ERROR TO LOAD';
     
     const noFiccionArray =  arrayProp.length > 0 && arrayProp[0].noFiccion ? 
-    arrayProp[0].noFiccion.map((book, index) => <Card key={index} title={book.title} author={book.author} type={book.type} url={book.urlImg} openModal={this.openModal} introductionText={book.introductionText} content={book.content} pageNumber={book.pageNumber} tag={book.tag} type2={book.type2}  /> ) : 'ERROR TO LOAD';
+    arrayProp[0].noFiccion.map((book, index) => <Card key={index} index={index} kind="noFiccion" title={book.title} author={book.author} type={book.type} url={book.urlImg} openModal={this.openModal} introductionText={book.introductionText} content={book.content} pageNumber={book.pageNumber} tag={book.tag} type2={book.type2}  /> ) : 'ERROR TO LOAD';
     
     arrayProp[0].ficcion && console.log(arrayProp[0].ficcion);
+    arrayProp[0].noFiccion && console.log(arrayProp[0].noFiccion);
  
     return {
             type: MAP_INFO,
@@ -31,7 +32,7 @@ export function mapInfo(arrayProp) {
         }
 }
 
-export function buildPurchaseArray(index, toggle){
+export function buildPurchaseArray(index, toggle, kind){
     return dispatch => {
         function getBooksArray(){
             return store.getState().requestedInfo.infoBooks;
@@ -45,7 +46,7 @@ export function buildPurchaseArray(index, toggle){
         store.subscribe(getPurchaseArray);
         const purchaseArray = getPurchaseArray();
     
-        const booksArray2 = booksArray[0].ficcion;
+        const booksArray2 = booksArray[0][kind];
         const getSingleBook = booksArray2[index];
     
         purchaseArray.push(getSingleBook)
