@@ -18,10 +18,10 @@ export function requestInfo() {
 
 export function mapInfo(arrayProp) {
     const ficcionArray =  arrayProp.length > 0 && arrayProp[0].ficcion ? 
-    arrayProp[0].ficcion.map((book, index) => <Card key={index} index={index} kind="ficcion" title={book.title} author={book.author} type={book.type} url={book.urlImg} openModal={this.openModal} introductionText={book.introductionText} content={book.content} pageNumber={book.pageNumber} tag={book.tag} type2={book.type2}  /> ) : 'ERROR TO LOAD';
+    arrayProp[0].ficcion.map((book, index) => <Card key={index} index={index} kind="ficcion" title={book.title} author={book.author} type={book.type} url={book.urlImg} introductionText={book.introductionText} content={book.content} pageNumber={book.pageNumber} tag={book.tag} type2={book.type2}  /> ) : 'ERROR TO LOAD';
     
     const noFiccionArray =  arrayProp.length > 0 && arrayProp[0].noFiccion ? 
-    arrayProp[0].noFiccion.map((book, index) => <Card key={index} index={index} kind="noFiccion" title={book.title} author={book.author} type={book.type} url={book.urlImg} openModal={this.openModal} introductionText={book.introductionText} content={book.content} pageNumber={book.pageNumber} tag={book.tag} type2={book.type2}  /> ) : 'ERROR TO LOAD';
+    arrayProp[0].noFiccion.map((book, index) => <Card key={index} index={index} kind="noFiccion" title={book.title} author={book.author} type={book.type} url={book.urlImg} introductionText={book.introductionText} content={book.content} pageNumber={book.pageNumber} tag={book.tag} type2={book.type2}  /> ) : 'ERROR TO LOAD';
     
     arrayProp[0].ficcion && console.log(arrayProp[0].ficcion);
     arrayProp[0].noFiccion && console.log(arrayProp[0].noFiccion);

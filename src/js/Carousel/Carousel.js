@@ -83,14 +83,17 @@ class Carousel extends Component {
 
     render(){
         return(
-            <div className="carousel-container">
-                <button className={`button-style ${this.state.disabledLeft}`} onClick={this.toLeft}>&lt;&lt;</button>
-                    <div className="carousel-wrapper">
-                        <div className={`carousel ${this.state.marginLeftClass}`}>
-                            {this.props.children}
+            <div className="whole-carousel-container">
+                <p>{this.props.carouselTitle}</p>
+                <div className="carousel-container">
+                    <button className={`button-style ${this.state.disabledLeft}`} onClick={this.toLeft}>&lt;&lt;</button>
+                        <div className="carousel-wrapper">
+                            <div className={`carousel ${this.state.marginLeftClass}`}>
+                                {this.props.children}
+                            </div>
                         </div>
-                    </div>
-                <button className={`button-style ${this.state.disabledRight}`} onClick={this.toRight}>&gt;&gt;</button>
+                    <button className={`button-style ${this.state.disabledRight}`} onClick={this.toRight}>&gt;&gt;</button>
+                </div>
             </div>
         )
     }

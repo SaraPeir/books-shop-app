@@ -29,14 +29,22 @@ class Card extends Component {
   render() {
     return (
       <div>
-        <div className="card" onClick={this.props.openModal} isOpen={this.props.isOpen} >
-        <div className={this.state.iconClass} onClick={this.togglePreference} >{Heart}</div>
+        <div className="card">
+        <div className="card-header">
+          <div className="icons-container">
+            <div className={`icon-common-style ${this.state.iconClass}`} onClick={this.togglePreference} >{Heart}</div>
+            <div>{Heart}</div>
+          </div>
+          <div className="price-container">
+            <p id="no-margin">18 euro</p>
+          </div>
+        </div>
           <img className="card-box-img" src={this.props.url} alt={`${this.props.title} image`} />
           <p className="hidden">{this.props.index}</p>
           <p className="hidden">{this.props.kind}</p>
           <p id="strong" className="margin-auto">{this.props.title}</p>
           <p className="margin-auto">{this.props.author}</p>
-          <p id="tag" className="margin-auto">{this.props.type}</p>
+          <p id="tag" className="noVisibleInMobile margin-auto">{this.props.type}</p>
           <ModalBS title={this.props.title} url={this.props.url} author={this.props.author} introductionText={this.props.introductionText} content={this.props.content} pageNumber={this.props.pageNumber} tag={this.props.tag} type2={this.props.type2} />
         </div>
       </div>
