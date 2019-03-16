@@ -1,15 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1552425479138" clover="3.2.0">
-  <project timestamp="1552425479138" name="All files">
-    <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2" elements="9" coveredelements="6" complexity="0" loc="6" ncloc="6" packages="1" files="1" classes="1"/>
-    <file name="Modal.js" path="C:\Users\Sara\proyectos-personales\books-shop-app\src\js\Modal\Modal.js">
+<coverage generated="1552766880880" clover="3.2.0">
+  <project timestamp="1552766880881" name="All files">
+    <metrics statements="41" coveredstatements="17" conditionals="14" coveredconditionals="4" methods="15" coveredmethods="5" elements="70" coveredelements="26" complexity="0" loc="41" ncloc="41" packages="4" files="4" classes="4"/>
+    <package name="images.icons">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Heart.js" path="C:\Users\Sara\proyectos-personales\books-shop-app\src\images\icons\Heart.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="js.Card">
+      <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <file name="Card.js" path="C:\Users\Sara\proyectos-personales\books-shop-app\src\js\Card\Card.js">
+        <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="30" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="js.Modal">
       <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="9" count="1" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="16" count="0" type="stmt"/>
-      <line num="17" count="0" type="stmt"/>
-      <line num="23" count="1" type="stmt"/>
-    </file>
+      <file name="Modal.js" path="C:\Users\Sara\proyectos-personales\books-shop-app\src\js\Modal\Modal.js">
+        <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="redux">
+      <metrics statements="25" coveredstatements="3" conditionals="10" coveredconditionals="0" methods="9" coveredmethods="0"/>
+      <file name="actions.js" path="C:\Users\Sara\proyectos-personales\books-shop-app\src\redux\actions.js">
+        <metrics statements="25" coveredstatements="3" conditionals="10" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="20" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="61" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

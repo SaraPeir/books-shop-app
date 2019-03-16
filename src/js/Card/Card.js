@@ -5,7 +5,7 @@ import {Heart} from '../../images/icons/Heart.js';
 import { buildPurchaseArray } from '../../redux/actions.js';
 import { connect } from 'react-redux';
 
-class Card extends Component {
+export class Card extends Component {
   constructor(){
     super();
     this.state = {
@@ -32,7 +32,7 @@ class Card extends Component {
         <div className="card">
         <div className="card-header">
           <div className="icons-container">
-            <div className={`icon-common-style ${this.state.iconClass}`} onClick={this.togglePreference} >{Heart}</div>
+            <div id="icon-heart" className={`icon-common-style ${this.state.iconClass}`} onClick={this.togglePreference} >{Heart}</div>
             <div>{Heart}</div>
           </div>
           <div className="price-container">
@@ -52,10 +52,4 @@ class Card extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    arrayBooks: state.buildPurchaseArray.arrayBooks
-  }
-}
-
-export default connect(mapStateToProps, { buildPurchaseArray })(Card);
+export default connect(null, { buildPurchaseArray })(Card);
