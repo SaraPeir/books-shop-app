@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modal /> should match snapshot 1`] = `
+<div>
+  <div
+    className="centering"
+  >
+    <Button
+      className="button"
+      color="secondary"
+      onClick={[Function]}
+      tag="button"
+    >
+      Más detalles
+    </Button>
+  </div>
+  <Modal
+    autoFocus={true}
+    backdrop={true}
+    backdropTransition={
+      Object {
+        "mountOnEnter": true,
+        "timeout": 150,
+      }
+    }
+    centered={false}
+    fade={true}
+    isOpen={false}
+    keyboard={true}
+    modalTransition={
+      Object {
+        "timeout": 300,
+      }
+    }
+    onClick={[Function]}
+    onClosed={[Function]}
+    onOpened={[Function]}
+    role="dialog"
+    toggle={[Function]}
+    zIndex={1050}
+  >
+    <ModalHeader
+      charCode={215}
+      closeAriaLabel="Close"
+      tag="h5"
+      toggle={[Function]}
+      wrapTag="div"
+    >
+      <span
+        className="special-typo2"
+      >
+        ,
+      </span>
+       
+      <span
+        className="special-typo"
+      />
+    </ModalHeader>
+    <ModalBody
+      className="container centering"
+      onClick={[Function]}
+      tag="div"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-12"
+        >
+          <img
+            alt="undefined image"
+            className="img-style"
+          />
+        </div>
+        <div
+          className="col-12  p-5"
+        >
+          <p
+            className="special-typo"
+          />
+          <p />
+        </div>
+      </div>
+    </ModalBody>
+    <ModalFooter
+      tag="div"
+      toggle={[Function]}
+    >
+       - 
+       páginas
+    </ModalFooter>
+  </Modal>
+</div>
+`;

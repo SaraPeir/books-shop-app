@@ -1,8 +1,8 @@
 import {MAP_INFO} from '../actions.js';
 
 const initialState = {
-    ficcion: '*****',
-    noFiccion: '******'
+    ficcion: 'ficcion',
+    noFiccion: 'noFiccion'
 }
 
 export function mapInfo(state = initialState, action){

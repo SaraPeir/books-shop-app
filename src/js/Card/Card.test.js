@@ -5,10 +5,16 @@ import { shallow } from 'enzyme';
 jest.mock('../../index.js', () => "root");
 
 describe('<Card />', () => {
-        it('renders without crashing', () => {
+        it('should render without crashing', () => {
             const wrapper = shallow(<Card />);
             expect(wrapper).toHaveLength(1);
         });
+
+        it('should match snapshot', () => {
+            const wrapper = shallow(<Card />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
         it('should change heart icon style from unselected to selected when heart icon is selected', () => {
             const toggle = true;
             const changedIconClass = toggle ? 'selected-icon-style' : 'icon-style';

@@ -4,13 +4,8 @@ import { requestInfo } from '../redux/actions.js';
 import { mapInfo, buildPurchaseArray } from '../redux/actions.js';
 import Carousel from './Carousel/Carousel';
 import Header from './Header/Header';
-import Loader from 'react-loader-spinner';
-import {
-    BrowserView,
-    MobileView,
-    isBrowser,
-    isMobile
-  } from "react-device-detect";
+// import Loader from 'react-loader-spinner';
+import { BrowserView } from "react-device-detect";
 
 class App extends Component {
     componentDidMount() {
@@ -50,7 +45,6 @@ function mapStateToProps(state) {
         infoBooks: state.requestedInfo.infoBooks,
         ficcion: state.mapInfo.ficcion,
         noFiccion: state.mapInfo.noFiccion
-
     }
 }
 

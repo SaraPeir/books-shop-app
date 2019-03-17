@@ -17,15 +17,15 @@ export function requestInfo() {
 }
 
 export function mapInfo(arrayProp) {
-    const ficcionArray =  arrayProp.length > 0 && arrayProp[0].ficcion ? 
+    const ficcionArray =  arrayProp.length > 0 && arrayProp[0].ficcion && arrayProp[0].ficcion.length > 0 ? 
     arrayProp[0].ficcion.map((book, index) => <Card key={index} index={index} kind="ficcion" title={book.title} author={book.author} type={book.type} url={book.urlImg} introductionText={book.introductionText} content={book.content} pageNumber={book.pageNumber} tag={book.tag} type2={book.type2}  /> ) : 'ERROR TO LOAD';
     
-    const noFiccionArray =  arrayProp.length > 0 && arrayProp[0].noFiccion ? 
+    const noFiccionArray =  arrayProp.length > 0 && arrayProp[0].noFiccion && arrayProp[0].noFiccion.length > 0 ? 
     arrayProp[0].noFiccion.map((book, index) => <Card key={index} index={index} kind="noFiccion" title={book.title} author={book.author} type={book.type} url={book.urlImg} introductionText={book.introductionText} content={book.content} pageNumber={book.pageNumber} tag={book.tag} type2={book.type2}  /> ) : 'ERROR TO LOAD';
     
     // arrayProp[0].ficcion && console.log(arrayProp[0].ficcion);
     // arrayProp[0].noFiccion && console.log(arrayProp[0].noFiccion);
- 
+
     return {
             type: MAP_INFO,
             payload: {ficcionArray, noFiccionArray}
