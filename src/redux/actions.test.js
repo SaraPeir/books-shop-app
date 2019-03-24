@@ -19,9 +19,9 @@ describe('requestInfo', () => {
         array.push(booksObject);
         const expectedAction = {
             type: REQUEST_INFO,
-            arrayInfo: array
-          }
-          expect(requestInfo()).toEqual(expectedAction)
+            payload: array
+        }
+        expect(requestInfo()).toEqual(expectedAction)
     });
 });
 
@@ -30,9 +30,9 @@ describe('mapInfo', () => {
         const arrayProp = [];
         const expectedAction = {
             type: MAP_INFO,
-            payload: {ficcionArray: 'ERROR TO LOAD', noFiccionArray: 'ERROR TO LOAD'}
-          }
-          expect(mapInfo(arrayProp)).toEqual(expectedAction)
+            payload: { ficcionArray: 'ERROR TO LOAD', noFiccionArray: 'ERROR TO LOAD' }
+        }
+        expect(mapInfo(arrayProp)).toEqual(expectedAction)
     });
     it('should  map only noFiccion books when ficcion array is an empty array', () => {
         const arrayProp = [{
@@ -47,18 +47,18 @@ describe('mapInfo', () => {
                     title: "Cree en ti"
                 }
             ]
-            }];
+        }];
         const expectedAction = {
             type: MAP_INFO,
             payload: {
-                ficcionArray: 'ERROR TO LOAD', 
+                ficcionArray: 'ERROR TO LOAD',
                 noFiccionArray: [
                     <Card key={0} index={0} kind="noFiccion" author="Leticia Dolera" title="Morder la manzana" />,
                     <Card key={1} index={1} kind="noFiccion" author="Rut Nieves" title="Cree en ti" />
-                ] 
+                ]
             }
-          }
-          expect(mapInfo(arrayProp)).toEqual(expectedAction)
+        }
+        expect(mapInfo(arrayProp)).toEqual(expectedAction)
     });
     it('should  map only ficcion books when noFiccion array is an empty array', () => {
         const arrayProp = [{
@@ -73,19 +73,20 @@ describe('mapInfo', () => {
                 }
             ],
             noFiccion: []
-            }];
+        }];
+        
         const expectedAction = {
             type: MAP_INFO,
-            payload: { 
+            payload: {
                 ficcionArray: [
                     <Card key={0} index={0} kind="ficcion" author="María Dueñas" title="Las hijas del Capitán" />,
                     <Card key={1} index={1} kind="ficcion" author="Fernando Aramburu" title="Patria" />
                 ],
-                noFiccionArray: 'ERROR TO LOAD' 
+                noFiccionArray: 'ERROR TO LOAD'
             }
-                
-          }
-          expect(mapInfo(arrayProp)).toEqual(expectedAction)
+
+        }
+        expect(mapInfo(arrayProp)).toEqual(expectedAction)
     });
 });
 
@@ -95,7 +96,7 @@ describe('buildPurchaseArray', () => {
         const store = mockStore();
         store.dispatch(buildPurchaseArray(5, true, 'noFiccion'));
         const actions = store.getActions();
-        expect(actions[0]).toEqual({type: 'BUILD_PURCHASE_ARRAY'})
+        expect(actions[0]).toEqual({ type: 'BUILD_PURCHASE_ARRAY' })
     });
 
     it('should ....', () => {
@@ -123,14 +124,14 @@ describe('buildPurchaseArray', () => {
         }];
 
         const purchaseArray = [
-            {title: "El silencio de la ciudad blanca", author: "Eva García Sáenz de Urturi"},
-            {title: "El rey recibe", author: "Eduardo Mendoza"},
-            {title: "El naufragio", author: "Lola García"}
+            { title: "El silencio de la ciudad blanca", author: "Eva García Sáenz de Urturi" },
+            { title: "El rey recibe", author: "Eduardo Mendoza" },
+            { title: "El naufragio", author: "Lola García" }
         ];
 
-        const getSingleBook = {title: "El amor de tu vida", author: "Rut Nieves"};
+        const getSingleBook = { title: "El amor de tu vida", author: "Rut Nieves" };
 
-        
+
 
         actionsUtils.getAllBooks = jest.fn().mockReturnValue(booksArray);
         actionsUtils.getPurchaseBooks = jest.fn().mockReturnValue(purchaseArray);
@@ -140,17 +141,16 @@ describe('buildPurchaseArray', () => {
 
         const store = mockStore();
         store.dispatch(buildPurchaseArray(5, false, 'noFiccion'));
-        
+
         const actions = store.getActions();
 
         const payloadResult = [
-            {title: "El silencio de la ciudad blanca", author: "Eva García Sáenz de Urturi"},
-            {title: "El rey recibe", author: "Eduardo Mendoza"},
-            {title: "El naufragio", author: "Lola García"}
+            { title: "El silencio de la ciudad blanca", author: "Eva García Sáenz de Urturi" },
+            { title: "El rey recibe", author: "Eduardo Mendoza" },
+            { title: "El naufragio", author: "Lola García" }
         ]
 
-        expect(actions[0]).toEqual({type: 'BUILD_PURCHASE_ARRAY', payload: payloadResult})
+        expect(actions[0]).toEqual({ type: 'BUILD_PURCHASE_ARRAY', payload: payloadResult })
     });
 });
 
-  

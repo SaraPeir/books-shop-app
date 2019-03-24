@@ -12,7 +12,7 @@ export function requestInfo() {
     array.push(booksObject);
     return {
             type: REQUEST_INFO,
-            arrayInfo: array
+            payload: array
         }
 }
 

@@ -104,28 +104,14 @@
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -143,9 +129,6 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,15 +139,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -175,7 +150,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,7 +165,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import booksObject from '../books.json';
 import React from 'react';
 import Card from '../js/Card/Card.js';
-import store from '../index.js';
 import actionsUtils from './actionsUtils';
 &nbsp;
 export const REQUEST_INFO = 'REQUEST_INFO';
@@ -203,7 +176,7 @@ export function requestInfo() {
     array.push(booksObject);
     return {
             type: REQUEST_INFO,
-            arrayInfo: array
+            payload: array
         }
 }
 &nbsp;
@@ -214,9 +187,6 @@ export function mapInfo(arrayProp) {
     const noFiccionArray =  arrayProp.length &gt; 0 &amp;&amp; arrayProp[0].noFiccion &amp;&amp; arrayProp[0].noFiccion.length &gt; 0 ? 
     arrayProp[0].noFiccion.map((book, index) =&gt; &lt;Card key={index} index={index} kind="noFiccion" title={book.title} author={book.author} type={book.type} url={book.urlImg} introductionText={book.introductionText} content={book.content} pageNumber={book.pageNumber} tag={book.tag} type2={book.type2}  /&gt; ) : 'ERROR TO LOAD';
     
-    // arrayProp[0].ficcion &amp;&amp; console.log(arrayProp[0].ficcion);
-    // arrayProp[0].noFiccion &amp;&amp; console.log(arrayProp[0].noFiccion);
-&nbsp;
     return {
             type: MAP_INFO,
             payload: {ficcionArray, noFiccionArray}
@@ -227,17 +197,9 @@ export function buildPurchaseArray(index, toggle, kind){
     return dispatch =&gt; {
 &nbsp;
         /* 1. Se cogen los datos desde la llamada */
-        // function getBooksArray(){
-        //     return store.getState().requestedInfo.infoBooks;
-        // }
-        // store.subscribe(getBooksArray);
         const booksArray = actionsUtils.getAllBooks();
         
          /* 2. Se cogen los datos que actualmente vienen desde el presente reducer */
-        // function getPurchaseArray(){
-        //     return store.getState().buildPurchaseArray.arrayBooks;
-        // }
-        // store.subscribe(getPurchaseArray);
         const purchaseArray = actionsUtils.getPurchaseBooks();
         
         /* 3. Se coge el array dependiendo del tipo (kind) y se coge el singulo objecto a través del index */
@@ -246,7 +208,6 @@ export function buildPurchaseArray(index, toggle, kind){
         
         /* 4. El singulo objecto se mete en purchaseArray (punto 2) o al revés se quita (filtered) */
         purchaseArray &amp;&amp; purchaseArray.push(getSingleBook)
-        // const filtered = purchaseArray &amp;&amp; purchaseArray.filter(book =&gt; book.title !== getSingleBook.title);
         const filtered = actionsUtils.getFiltered(purchaseArray, getSingleBook);
 &nbsp;
         /* Dependiendo si el objecto viene seleccionado, se muestra o el purchase array o el filtered */
@@ -265,7 +226,7 @@ export function buildPurchaseArray(index, toggle, kind){
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Mar 23 2019 12:55:31 GMT+0100 (GMT+01:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Mar 24 2019 22:47:42 GMT+0100 (GMT+01:00)
 </div>
 </div>
 <script src="..\prettify.js"></script>
