@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { requestInfo } from '../redux/actions.js';
-import { mapInfo, buildPurchaseArray } from '../redux/actions.js';
+import { mapInfo } from '../redux/actions.js';
 import Carousel from './Carousel/Carousel';
 import Header from './Header/Header';
 // import Loader from 'react-loader-spinner';
@@ -27,14 +27,12 @@ class App extends Component {
                         {this.props.ficcion}
                     </Carousel>
                 </BrowserView>
-                 }
                 
                  <BrowserView>
                     <Carousel carouselTitle={'La top 10 de libros de no ficción'}>
                         {this.props.noFiccion}
                     </Carousel>
                 </BrowserView>
-                <button onClick={this.props.buildPurchaseArray}>Launch event</button>
             </div>
         )
     }
@@ -48,5 +46,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { requestInfo, mapInfo, buildPurchaseArray })(App);
+export default connect(mapStateToProps, { requestInfo, mapInfo })(App);
 
