@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { requestInfo } from '../redux/actions.js';
 import { mapInfo } from '../redux/actions.js';
 import Carousel from './Carousel/Carousel';
+import TouchCarousel from './TouchCarousel/TouchCarousel';
 import Header from './Header/Header';
 // import Loader from 'react-loader-spinner';
 import { BrowserView } from "react-device-detect";
@@ -33,6 +34,8 @@ class App extends Component {
                         {this.props.noFiccion}
                     </Carousel>
                 </BrowserView>
+
+                <TouchCarousel />
             </div>
         )
     }
