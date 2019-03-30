@@ -70,7 +70,7 @@ class Carousel extends Component {
             }) 
             console.log(marginLeft);
         }
-        else if(marginLeft === 150){
+        else if(marginLeft === 50){
             this.setState({
                 marginLeft: 0,
                 marginLeftClass: 'margin-left0',

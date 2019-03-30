@@ -12,6 +12,13 @@
     width: 90%;
     height: 400px;
     overflow-x: scroll;
+
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* IE, Edge */
+    -ms-overflow-style: none;
+
     overflow-y: hidden;
     margin: auto;
 }
@@ -22,7 +29,10 @@
     width: 100%;
 }
 
+/* hide scrollbar, Chrome */
 ::-webkit-scrollbar {
     width: 0px; /* remove scrollbar space /
     background: transparent; / optional: just make scrollbar invisible */
     }
+
+    
